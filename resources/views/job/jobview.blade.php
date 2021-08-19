@@ -7,19 +7,19 @@
             <!-- Logo -->
             <div class="header-left">
                 <a href="{{ route('home') }}" class="logo">
-                    <img src="{{ URL::to('assets/img/logo.png') }}" width="40" height="40" alt="">
+                    <img src="{{ URL::to('assets/img/favicon.jpg') }}" width="40" height="40" alt="">
                 </a>
             </div>
             <!-- /Logo -->
             <!-- Header Title -->
             <div class="page-title-box float-left">
-                <h3>Soeng Souy</h3>
+                <h3>Job Dashboard</h3>
             </div>
             <!-- /Header Title -->
             <!-- Header Menu -->
             <ul class="nav user-menu">
                 <!-- Search -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <div class="top-nav-search">
                         <a href="javascript:void(0);" class="responsive-search">
                             <i class="fa fa-search"></i>
@@ -29,10 +29,10 @@
                             <button class="btn" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
-                </li>
+                </li> --}}
                 <!-- /Search -->
                 <!-- Flag -->
-                <li class="nav-item dropdown has-arrow flag-nav">
+                {{-- <li class="nav-item dropdown has-arrow flag-nav">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
                         <img src="{{ URL::to('assets/img/flags/us.png') }}" alt="" height="20"> <span>English</span>
                     </a>
@@ -53,7 +53,7 @@
                             <img src="{{ URL::to('assets/img/flags/de.png') }}" alt="" height="16"> German
                         </a>
                     </div>
-                </li>
+                </li> --}}
                 <!-- /Flag -->
                 
                 <li class="nav-item">
@@ -95,8 +95,8 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="job-info job-widget">
-                            <h3 class="job-title">Android Developer</h3>
-                            <span class="job-dept">App Development</span>
+                            <h3 class="job-title">Outbound</h3>
+                            <span class="job-dept">Sales</span>
                             <ul class="job-post-det">
                                 <li><i class="fa fa-calendar"></i> Post Date: <span class="text-blue">Feb 18, 2019</span></li>
                                 <li><i class="fa fa-calendar"></i> Last Date: <span class="text-blue">May 31, 2019</span></li>
@@ -133,12 +133,12 @@
                             <div class="info-list">
                                 <span><i class="fa fa-money"></i></span>
                                 <h5>Salary</h5>
-                                <p>$32k - $38k</p>
+                                <p>Php 15000</p>
                             </div>
                             <div class="info-list">
                                 <span><i class="fa fa-suitcase"></i></span>
                                 <h5>Experience</h5>
-                                <p>2 Years</p>
+                                <p>No experience</p>
                             </div>
                             <div class="info-list">
                                 <span><i class="fa fa-ticket"></i></span>

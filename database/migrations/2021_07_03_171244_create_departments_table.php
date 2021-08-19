@@ -22,6 +22,15 @@ class CreateDepartmentsTable extends Migration
             ['department' => 'Web Department'],
             ['department' => 'IT Management'],
             ['department' => 'Marketing'],
+            ['department' => 'Owner'],
+            ['department' => 'Accounts'],
+            ['department' => 'Ameriquote'],
+            ['department' => 'Admin & HR'],
+            ['department' => 'House Experts'],
+            ['department' => 'O2O'],
+            ['department' => 'Rush Order'],
+            
+
         ]);
     }
 

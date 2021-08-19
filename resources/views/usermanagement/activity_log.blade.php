@@ -47,7 +47,7 @@
                         </a>
                         <ul style="display: none;">
                             <li><a href="{{ route('all/employee/card') }}">All Employees</a></li>
-                            <li><a href="{{ route('form/holidays/new') }}">Holidays</a></li>
+                            {{-- <li><a href="{{ route('form/holidays/new') }}">Holidays</a></li>
                             <li><a href="{{ route('form/leaves/new') }}">Leaves (Admin) 
                                 <span class="badge badge-pill bg-primary float-right">1</span></a>
                             </li>
@@ -59,10 +59,10 @@
                             <li><a href="designations.html">Designations</a></li>
                             <li><a href="timesheet.html">Timesheet</a></li>
                             <li><a href="shift-scheduling.html">Shift & Schedule</a></li>
-                            <li><a href="overtime.html">Overtime</a></li>
+                            <li><a href="overtime.html">Overtime</a></li> --}}
                         </ul>
                     </li>
-                    <li class="submenu">
+                    {{-- <li class="submenu">
                         <a href="#"><i class="la la-rocket"></i> 
                             <span> Projects</span>
                             <span class="menu-arrow"></span>
@@ -72,8 +72,8 @@
                             <li><a href="tasks.html">Tasks</a></li>
                             <li><a href="task-board.html">Task Board</a></li>
                         </ul>
-                    </li>
-                    <li class="menu-title"> <span>HR</span> </li>
+                    </li> --}}
+                    {{-- <li class="menu-title"> <span>HR</span> </li>
                     <li class="submenu"> <a href="#"><i class="la la-files-o"></i>
                         <span> Sales </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
@@ -101,12 +101,12 @@
                             <li><a href="salary-view.html"> Payslip </a></li>
                             <li><a href="payroll-items.html"> Payroll Items </a></li>
                         </ul>
-                    </li>
-                    <li> <a href="policies.html">
+                    </li> --}}
+                    {{-- <li> <a href="policies.html">
                         <i class="la la-file-pdf-o"></i>
                         <span>Policies</span></a>
-                    </li>
-                    <li class="submenu"> <a href="#"><i class="la la-pie-chart"></i>
+                    </li> --}}
+                    {{-- <li class="submenu"> <a href="#"><i class="la la-pie-chart"></i>
                         <span> Reports </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="expense-reports.html"> Expense Report </a></li>
@@ -121,7 +121,7 @@
                             <li><a href="leave-reports.html"> Leave Report </a></li>
                             <li><a href="daily-reports.html"> Daily Report </a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="menu-title"> <span>Performance</span> </li>
                     <li class="submenu"> <a href="#"><i class="la la-graduation-cap"></i>
                         <span> Performance </span> <span class="menu-arrow"></span></a>

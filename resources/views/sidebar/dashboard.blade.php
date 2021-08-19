@@ -60,7 +60,7 @@
                             <li><a href="payroll-items.html"> Payroll Items </a></li>
                         </ul>
                     </li>
-                    <li> <a href="policies.html"><i class="la la-file-pdf-o"></i> <span>Policies</span></a> </li>
+                    {{-- <li> <a href="policies.html"><i class="la la-file-pdf-o"></i> <span>Policies</span></a> </li>
                     <li class="submenu"> <a href="#"><i class="la la-pie-chart"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="expense-reports.html"> Expense Report </a></li>
@@ -75,15 +75,15 @@
                             <li><a href="leave-reports.html"> Leave Report </a></li>
                             <li><a href="daily-reports.html"> Daily Report </a></li>
                         </ul>
-                    </li>
-                    <li class="menu-title"> <span>Performance</span> </li>
+                    </li> --}}
+                    {{-- <li class="menu-title"> <span>Performance</span> </li>
                     <li class="submenu"> <a href="#"><i class="la la-graduation-cap"></i> <span> Performance </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="performance-indicator.html"> Performance Indicator </a></li>
                             <li><a href="performance.html"> Performance Review </a></li>
                             <li><a href="performance-appraisal.html"> Performance Appraisal </a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="submenu"> <a href="#"><i class="la la-crosshairs"></i> <span> Goals </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="goal-tracking.html"> Goal List </a></li>

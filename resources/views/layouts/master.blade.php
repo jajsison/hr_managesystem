@@ -48,7 +48,7 @@
 		<div class="header">
 			<!-- Logo -->
 			<div class="header-left">
-				<a href="{{ route('home') }}" class="logo"> <img src="{{ URL::to('assets/img/logo.png') }}" width="40" height="40" alt=""> </a>
+				<a href="{{ route('home') }}" class="logo"> <img src="{{ URL::to('assets/img/favicon.jpg') }}" width="40" height="40" alt=""> </a>
 			</div>
 			<!-- /Logo -->
 			<a id="toggle_btn" href="javascript:void(0);">
@@ -63,7 +63,7 @@
 			<!-- Header Menu -->
 			<ul class="nav user-menu">
 				<!-- Search -->
-				<li class="nav-item">
+				{{-- <li class="nav-item">
 					<div class="top-nav-search">
 						<a href="javascript:void(0);" class="responsive-search"> <i class="fa fa-search"></i> </a>
 						<form action="search.html">
@@ -71,19 +71,19 @@
 							<button class="btn" type="submit"><i class="fa fa-search"></i></button>
 						</form>
 					</div>
-				</li>
+				</li> --}}
 				<!-- /Search -->
 				<!-- Flag -->
-				<li class="nav-item dropdown has-arrow flag-nav">
+				{{-- <li class="nav-item dropdown has-arrow flag-nav">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"> <img src="{{ URL::to('assets/img/flags/us.png') }}" alt="" height="20"> <span>English</span> </a>
 					<div class="dropdown-menu dropdown-menu-right">
 						<a href="javascript:void(0);" class="dropdown-item"> <img src="{{ URL::to('assets/img/flags/us.png') }}" alt="" height="16"> English </a>
 						<a href="javascript:void(0);" class="dropdown-item"> <img src="{{ URL::to('assets/img/flags/kh.png') }}" alt="" height="16"> Khmer </a>
 					</div>
-				</li>
+				</li> --}}
 				<!-- /Flag -->
 				<!-- Notifications -->
-				<li class="nav-item dropdown">
+				{{-- <li class="nav-item dropdown">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <i class="fa fa-bell-o"></i> <span class="badge badge-pill">3</span> </a>
 					<div class="dropdown-menu notifications">
 						<div class="topnav-dropdown-header"> <span class="notification-title">Notifications</span> <a href="javascript:void(0)" class="clear-noti"> Clear All </a> </div>
@@ -153,10 +153,10 @@
 						</div>
 						<div class="topnav-dropdown-footer"> <a href="activities.html">View all Notifications</a> </div>
 					</div>
-				</li>
+				</li> --}}
 				<!-- /Notifications -->
 				<!-- Message Notifications -->
-				<li class="nav-item dropdown">
+				{{-- <li class="nav-item dropdown">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <i class="fa fa-comment-o"></i> <span class="badge badge-pill">8</span> </a>
 					<div class="dropdown-menu notifications">
 						<div class="topnav-dropdown-header"> <span class="notification-title">Messages</span> <a href="javascript:void(0)" class="clear-noti"> Clear All </a> </div>
@@ -223,7 +223,7 @@
 						</div>
 						<div class="topnav-dropdown-footer"> <a href="chat.html">View all Messages</a> </div>
 					</div>
-				</li>
+				</li> --}}
 				<!-- /Message Notifications -->
 				<li class="nav-item dropdown has-arrow main-drop">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -238,7 +238,7 @@
 						<a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
 					</div>
 				</li>
-			</ul>
+			</ul> 
 			<!-- /Header Menu -->
 			<!-- Mobile Menu -->
 			<div class="dropdown mobile-user-menu">

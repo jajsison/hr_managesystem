@@ -22,12 +22,16 @@ class CreatePositionTypesTable extends Migration
         DB::table('position_types')->insert([
             ['position' => 'CEO'],
             ['position' => 'CFO'],
-            ['position' => 'Manager'],
-            ['position' => 'Web Designer'],
-            ['position' => 'Web Developer'],
-            ['position' => 'Android Developer'],
-            ['position' => 'IOS Developer'],
+            ['position' => 'Owner'],
+            ['position' => 'IT Manager'],
             ['position' => 'Team Leader'],
+            ['position' => 'IT Assistant'],
+            ['position' => 'Sales Manager'],
+            ['position' => 'Account Manager'],
+            ['position' => 'Supervisor'],
+            ['position' => 'Supervisor - Email Marketing'],
+            ['position' => 'Supervisor - Team Warriors'],
+            ['position' => 'Supervisor - Team Raptors'],
         ]);
     }
 
