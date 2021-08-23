@@ -169,14 +169,14 @@
                             <li><a href="apptitude-result.html"> Aptitude Results </a></li>
                         </ul>
                     </li> --}}
-                    {{-- <li class="menu-title"> <span>Pages</span> </li>
+                    <li class="menu-title"> <span>Pages</span> </li>
                     <li class="submenu"> <a href="#"><i class="la la-user"></i>
                         <span> Profile </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="profile.html"> Employee Profile </a></li>
                             <li><a href="client-profile.html"> Client Profile </a></li>
                         </ul>
-                    </li> --}}
+                    </li>
                 </ul>
             </div>
         </div>
@@ -259,8 +259,9 @@
                                 <tr>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('/assets/images/'. $items->avatar) }}"></a>
-                                            <a href="profile.html">{{ $items->name }}<span>{{ $items->position }}</span></a>
+                                            <a href="{{ url('employee/profile/'.$items->rec_id) }}" class="avatar"><img alt="" src="{{ URL::to('/assets/images/'. $items->avatar) }}"></a>
+                                            <a href="{{ url('employee/profile/'.$items->rec_id) }}">{{ $items->name }}<span>{{ $items->position }}</span></a>
+
                                         </h2>
                                     </td>
                                     <td>{{ $items->rec_id }}</td>

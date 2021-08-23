@@ -166,14 +166,14 @@
                             <li><a href="apptitude-result.html"> Aptitude Results </a></li>
                         </ul>
                     </li> --}}
-                    {{-- <li class="menu-title"> <span>Pages</span> </li>
+                    <li class="menu-title"> <span>Pages</span> </li>
                     <li class="submenu"> <a href="#"><i class="la la-user"></i>
                         <span> Profile </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="profile.html"> Employee Profile </a></li>
-                            <li><a href="client-profile.html"> Client Profile </a></li>
+                            {{-- <li><a href="client-profile.html"> Client Profile </a></li> --}}
                         </ul>
-                    </li> --}}
+                    </li>
                 </ul>
             </div>
         </div>

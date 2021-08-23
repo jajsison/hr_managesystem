@@ -250,8 +250,7 @@
                                     <th>Role</th>
                                     <th>Status</th>
                                     <th>Departement</th>
-                                    <th>Birthday</th>
-                                    <th>Personal Email</th>
+                                    
                                     <th class="text-right">Action</th>
                                 </tr>
                             </thead>

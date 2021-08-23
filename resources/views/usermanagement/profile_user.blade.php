@@ -139,7 +139,7 @@
                     <li><a href="promotion.html"><i class="la la-bullhorn"></i> <span>Promotion</span></a></li>
                     <li><a href="resignation.html"><i class="la la-external-link-square"></i> <span>Resignation</span></a></li>
                     <li><a href="termination.html"><i class="la la-times-circle"></i> <span>Termination</span></a></li> --}}
-                    <li class="menu-title"> <span>Administration</span> </li>
+                    {{-- <li class="menu-title"> <span>Administration</span> </li> --}}
                     {{-- <li> <a href="assets.html"><i class="la la-object-ungroup">
                         </i> <span>Assets</span></a>
                     </li> --}}
@@ -987,7 +987,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('profile/information/save') }}" method="POST">
+                        <form action="{{ route('profile/information/save') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -995,7 +995,9 @@
                                         <img class="inline-block" src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
                                         <div class="fileupload btn">
                                             <span class="btn-text">edit</span>
-                                            <input class="upload" type="file" id="upload" name="upload">
+                                            <input class="upload" type="file" id="image" name="images">
+                                            <input type="hidden" name="hidden_image" id="e_image" value="{{ Auth::user()->avatar }}">
+
                                         </div>
                                     </div>
                                     <div class="row">

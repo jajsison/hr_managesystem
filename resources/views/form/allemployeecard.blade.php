@@ -62,7 +62,7 @@
                             <li><a href="overtime.html">Overtime</a></li> --}}
                         </ul>
                     </li>
-                    <li class="submenu">
+                    {{-- <li class="submenu">
                         <a href="#"><i class="la la-rocket"></i> 
                             <span> Projects</span>
                             <span class="menu-arrow"></span>
@@ -72,7 +72,7 @@
                             <li><a href="tasks.html">Tasks</a></li>
                             <li><a href="task-board.html">Task Board</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     {{-- <li class="menu-title"> <span>HR</span> </li>
                     <li class="submenu"> <a href="#"><i class="la la-files-o"></i>
                         <span> Sales </span> <span class="menu-arrow"></span></a>
@@ -235,7 +235,7 @@
                     </div>
                 </div>
             </form>
-            <!-- Search Filter -->
+             <!-- Search Filter -->
             {{-- message --}}
             {!! Toastr::message() !!}
             <div class="row staff-grid-row">
@@ -243,7 +243,7 @@
                 <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
                     <div class="profile-widget">
                         <div class="profile-img">
-                            <a href="profile.html" class="avatar"><img src="{{ URL::to('/assets/images/'. $lists->avatar) }}" alt="{{ $lists->avatar }}" alt="{{ $lists->avatar }}"></a>
+                            <a href="{{ url('employee/profile/'.$lists->rec_id) }}" class="avatar"><img src="{{ URL::to('/assets/images/'. $lists->avatar) }}" alt="{{ $lists->avatar }}" alt="{{ $lists->avatar }}"></a>
                         </div>
                         <div class="dropdown profile-action">
                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -256,6 +256,7 @@
                         <div class="small text-muted">{{ $lists->position }}</div>
                     </div>
                 </div>
+
                 @endforeach
             </div>
         </div>
@@ -328,7 +329,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="table-responsive m-t-15">
+                             <div class="table-responsive m-t-15">
                                 <table class="table table-striped custom-table">
                                     <thead>
                                         <tr>
@@ -379,7 +380,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                            </div>
+                            </div> 
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>
                             </div>
