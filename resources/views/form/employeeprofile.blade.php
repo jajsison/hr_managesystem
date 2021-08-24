@@ -164,7 +164,7 @@
                         <a href="#"><i class="la la-user"></i> <span> Profile </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a class="active" href="{{ route('profile_user') }}"> Employee Profile </a></li>
-                            <li><a href="client-profile.html"> Client Profile </a></li>
+                            {{-- <li><a href="client-profile.html"> Client Profile </a></li> --}}
                         </ul>
                     </li>
                 </ul>
@@ -210,7 +210,7 @@
                                                 <small class="text-muted">{{ $user[0]->position }}</small>
                                                 <div class="staff-id">Employee ID : {{ $user[0]->rec_id }}</div>
                                                 <div class="small doj text-muted">Date of Join : {{ $user[0]->join_date }}</div>
-                                                <div class="staff-msg"><a class="btn btn-custom" href="chat.html">Send Message</a></div>
+                                                {{-- <div class="staff-msg"><a class="btn btn-custom" href="chat.html">Send Message</a></div> --}}
                                             </div>
                                         </div>
                                         <div class="col-md-7">
@@ -223,6 +223,7 @@
                                                     <div class="title">Email:</div>
                                                     <div class="text"><a href="">{{ Auth::user()->email }}</a></div>
                                                 </li>
+                                                
                                                 <li>
                                                     <div class="title">Birthday:</div>
                                                     <div class="text">N/A</div>
@@ -264,8 +265,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
                         <ul class="nav nav-tabs nav-tabs-bottom">
                             <li class="nav-item"><a href="#emp_profile" data-toggle="tab" class="nav-link active">Profile</a></li>
-                            <li class="nav-item"><a href="#emp_projects" data-toggle="tab" class="nav-link">Projects</a></li>
-                            <li class="nav-item"><a href="#bank_statutory" data-toggle="tab" class="nav-link">Bank & Statutory <small class="text-danger">(Admin Only)</small></a></li>
+                            {{-- <li class="nav-item"><a href="#emp_projects" data-toggle="tab" class="nav-link">Projects</a></li>
+                            <li class="nav-item"><a href="#bank_statutory" data-toggle="tab" class="nav-link">Bank & Statutory <small class="text-danger">(Admin Only)</small></a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -281,12 +282,12 @@
                                     <h3 class="card-title">Personal Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
                                     <ul class="personal-info">
                                         <li>
-                                            <div class="title">Passport No.</div>
-                                            <div class="text">9876543210</div>
+                                            <div class="title">Nickname</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
-                                            <div class="title">Passport Exp Date.</div>
-                                            <div class="text">9876543210</div>
+                                            <div class="title">Personal Email</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Tel</div>
@@ -294,7 +295,7 @@
                                         </li>
                                         <li>
                                             <div class="title">Nationality</div>
-                                            <div class="text">Indian</div>
+                                            <div class="text">Filipino</div>
                                         </li>
                                         <li>
                                             <div class="title">Religion</div>
@@ -354,7 +355,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {{-- </div>
                     <div class="row">
                         <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
@@ -380,7 +381,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
@@ -455,7 +456,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 d-flex">
+                        {{-- <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
                                     <h3 class="card-title">Experience <a href="#" class="edit-icon" data-toggle="modal" data-target="#experience_info"><i class="fa fa-pencil"></i></a></h3>
@@ -498,13 +499,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- /Profile Info Tab -->
                 
                 <!-- Projects Tab -->
-                <div class="tab-pane fade" id="emp_projects">
+                {{-- <div class="tab-pane fade" id="emp_projects">
                     <div class="row">
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                             <div class="card">
@@ -758,11 +759,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- /Projects Tab -->
                 
                 <!-- Bank Statutory Tab -->
-                <div class="tab-pane fade" id="bank_statutory">
+                {{-- <div class="tab-pane fade" id="bank_statutory">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title"> Basic Salary Information</h3>
@@ -970,7 +971,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- /Bank Statutory Tab -->
             </div>
         </div>
@@ -1064,9 +1065,13 @@
                                         <label>Department <span class="text-danger">*</span></label>
                                         <select class="select" id="department" name="department">
                                             <option selected disabled>Select Department</option>
-                                            <option value="Web Development">Web Development</option>
                                             <option value="IT Management">IT Management</option>
-                                            <option value="Marketing">Marketing</option>
+                                            <option value="Admin and HR">Admin and HR</option>
+                                            <option value="Owner">Owner</option>
+                                            <option value="Accounts">Accounts</option>
+                                            <option value="House Experts">House Experts</option>
+                                            <option value="Rush Order">Rush Order</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
@@ -1076,9 +1081,13 @@
                                         
                                         <select class="select" id="" name="designation">
                                             <option selected disabled>Select Designation</option>
-                                            <option value="Web Designer">Web Designer</option>
+                                            <option value="IT Assistant">IT Assistant</option>
                                             <option value="Web Developer">Web Developer</option>
-                                            <option value="Android Developer">Android Developer</option>
+                                            <option value="IT Manager">IT Manager</option>
+                                            <option value="Owner">Owner</option>
+                                            <option value="Team Leader">Team Leader</option>
+                                            <option value="Agent">Agent</option>
+
                                         </select>
                                     </div>
                                 </div>
@@ -1119,16 +1128,16 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Passport No</label>
+                                        <label>Nickname</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Passport Expiry Date</label>
-                                        <div class="cal-icon">
-                                            <input class="form-control datetimepicker" type="text">
-                                        </div>
+                                        <label>Personal Email</label>
+                                        
+                                            <input type="text" class="form-control">
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -1146,9 +1155,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
-                                        <div class="cal-icon">
+                                        
                                             <input class="form-control" type="text">
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-6">

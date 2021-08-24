@@ -348,13 +348,14 @@
                                         <label class="col-form-label">Company</label>
                                         <select class="select" id="company" name="company">
                                             <option value="">-- Select --</option>
-                                            <option value="Soeng Souy">Soeng Souy</option>
-                                            <option value="StarGame Kh">StarGame Kh</option>
+                                            <option value="Launchpad">Launchpad</option>
+                                            {{-- <option value="Soeng Souy">Soeng Souy</option>
+                                            <option value="StarGame Kh">StarGame Kh</option> --}}
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="table-responsive m-t-15">
+                            {{-- <div class="table-responsive m-t-15">
                                 <table class="table table-striped custom-table">
                                     <thead>
                                         <tr>
@@ -405,7 +406,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                            </div>
+                            </div> --}}
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>
                             </div>

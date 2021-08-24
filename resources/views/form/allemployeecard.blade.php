@@ -294,6 +294,8 @@
                                         <input class="form-control" type="email" id="email" name="email" placeholder="Auto email" readonly>
                                     </div>
                                 </div>
+
+                                
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Birth Date</label>
@@ -322,14 +324,15 @@
                                         <label class="col-form-label">Company</label>
                                         <select class="select select2s-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="company" name="company">
                                             <option value="">-- Select --</option>
-                                            @foreach ($userList as $key=>$user )
-                                                <option value="{{ $user->name }}">{{ $user->name }}</option>
-                                            @endforeach
+                                            {{-- @foreach ($userList as $key=>$user )
+                                                <option value="{{ $user->name }}">{{ $user->name }}</option> --}}
+                                                <option value="Launchpad">Launchpad</option>
+                                            {{-- @endforeach --}}
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                             <div class="table-responsive m-t-15">
+                             {{-- <div class="table-responsive m-t-15">
                                 <table class="table table-striped custom-table">
                                     <thead>
                                         <tr>
@@ -380,7 +383,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                            </div> 
+                            </div>  --}}
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>
                             </div>

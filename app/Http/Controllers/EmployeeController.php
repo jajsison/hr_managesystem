@@ -63,21 +63,21 @@ class EmployeeController extends Controller
                 $employee->company      = $request->company;
                 $employee->save();
     
-                for($i=0;$i<count($request->id_count);$i++)
-                {
-                    $module_permissions = [
-                        'employee_id' => $request->employee_id,
-                        'module_permission' => $request->permission[$i],
-                        'id_count'          => $request->id_count[$i],
-                        'read'              => $request->read[$i],
-                        'write'             => $request->write[$i],
-                        'create'            => $request->create[$i],
-                        'delete'            => $request->delete[$i],
-                        'import'            => $request->import[$i],
-                        'export'            => $request->export[$i],
-                    ];
-                    DB::table('module_permissions')->insert($module_permissions);
-                }
+                // for($i=0;$i<count($request->id_count);$i++)
+                // {
+                //     $module_permissions = [
+                //         'employee_id' => $request->employee_id,
+                //         'module_permission' => $request->permission[$i],
+                //         'id_count'          => $request->id_count[$i],
+                //         'read'              => $request->read[$i],
+                //         'write'             => $request->write[$i],
+                //         'create'            => $request->create[$i],
+                //         'delete'            => $request->delete[$i],
+                //         'import'            => $request->import[$i],
+                //         'export'            => $request->export[$i],
+                //     ];
+                //     DB::table('module_permissions')->insert($module_permissions);
+                // }
                 
                 DB::commit();
                 Toastr::success('Add new employee successfully :)','Success');
@@ -127,21 +127,21 @@ class EmployeeController extends Controller
             ];
 
             // update table module_permissions
-            for($i=0;$i<count($request->id_permission);$i++)
-            {
-                $UpdateModule_permissions = [
-                    'employee_id' => $request->employee_id,
-                    'module_permission' => $request->permission[$i],
-                    'id'                => $request->id_permission[$i],
-                    'read'              => $request->read[$i],
-                    'write'             => $request->write[$i],
-                    'create'            => $request->create[$i],
-                    'delete'            => $request->delete[$i],
-                    'import'            => $request->import[$i],
-                    'export'            => $request->export[$i],
-                ];
-                module_permission::where('id',$request->id_permission[$i])->update($UpdateModule_permissions);
-            }
+            // for($i=0;$i<count($request->id_permission);$i++)
+            // {
+            //     $UpdateModule_permissions = [
+            //         'employee_id' => $request->employee_id,
+            //         'module_permission' => $request->permission[$i],
+            //         'id'                => $request->id_permission[$i],
+            //         'read'              => $request->read[$i],
+            //         'write'             => $request->write[$i],
+            //         'create'            => $request->create[$i],
+            //         'delete'            => $request->delete[$i],
+            //         'import'            => $request->import[$i],
+            //         'export'            => $request->export[$i],
+            //     ];
+            //     module_permission::where('id',$request->id_permission[$i])->update($UpdateModule_permissions);
+            // }
 
             User::where('id',$request->id)->update($updateUser);
             Employee::where('id',$request->id)->update($updateEmployee);

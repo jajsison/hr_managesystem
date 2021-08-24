@@ -123,67 +123,94 @@ class UserManagementController extends Controller
     // profile user
     public function profile()
     {
-        return view('usermanagement.profile_user');
+        $user = Auth::User();
+        Session::put('user', $user);
+        $user=Session::get('user');
+        $profile = $user->rec_id;
+       
+        $user = DB::table('users')->get();
+        $employees = DB::table('profile_information')->where('rec_id',$profile)->first();
+
+        if(empty($employees))
+        {
+            $information = DB::table('profile_information')->where('rec_id',$profile)->first();
+            return view('usermanagement.profile_user',compact('information','user'));
+
+        }else{
+            $rec_id = $employees->rec_id;
+            if($rec_id == $profile)
+            {
+                $information = DB::table('profile_information')->where('rec_id',$profile)->first();
+                return view('usermanagement.profile_user',compact('information','user'));
+            }else{
+                $information = ProfileInformation::all();
+                return view('usermanagement.profile_user',compact('information','user'));
+            } 
+        }
+
     }
 
     // save profile information
      // save profile information
      public function profileInformation(Request $request)
      {
-         try{
-             if(!empty($request->images))
-             {
-                 $image_name = $request->hidden_image;
-                 $image = $request->file('images');
-                 if($image_name =='photo_defaults.jpg')
-                 {
-                     if($image != '')
-                     {
-                         $image_name = rand() . '.' . $image->getClientOriginalExtension();
-                         $image->move(public_path('/assets/images/'), $image_name);
-                     }
-                 }
-                 else{
-                     if($image != '')
-                     {
-                         $image_name = rand() . '.' . $image->getClientOriginalExtension();
-                         $image->move(public_path('/assets/images/'), $image_name);
-                     }
-                 }
-                 $update = [
-                     'rec_id' => $request->rec_id,
-                     'name'   => $request->name,
-                     'avatar' => $image_name,
-                 ];
-                 User::where('rec_id',$request->rec_id)->update($update);
-             } 
+         
+            try{
+                if(!empty($request->images))
+                {
+                    $image_name = $request->hidden_image;
+                    $image = $request->file('images');
+                    if($image_name =='photo_defaults.jpg')
+                    {
+                        if($image != '')
+                        {
+                            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+                            $image->move(public_path('/assets/images/'), $image_name);
+                        }
+                    }
+                    else{
+                        if($image != '')
+                        {
+                            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+                            $image->move(public_path('/assets/images/'), $image_name);
+                        }
+                    }
+                    $update = [
+                        'rec_id' => $request->rec_id,
+                        'name'   => $request->name,
+                        'avatar' => $image_name,
+                    ];
+                    User::where('rec_id',$request->rec_id)->update($update);
+                } 
+    
+                $information = ProfileInformation::updateOrCreate(['rec_id' => $request->rec_id]);
+                $information->name         = $request->name;
+                $information->rec_id       = $request->rec_id;
+                $information->email        = $request->email;
+                $information->birth_date   = $request->birthDate;
+                $information->gender       = $request->gender;
+                $information->address      = $request->address;
+                $information->state        = $request->state;
+                $information->country      = $request->country;
+                $information->pin_code     = $request->pin_code;
+                $information->phone_number = $request->phone_number;
+                $information->department   = $request->department;
+                $information->designation  = $request->designation;
+                $information->reports_to   = $request->reports_to;
+                $information->save();
+                
+                DB::commit();
+                Toastr::success('Profile Information successfully :)','Success');
+                return redirect()->back();
+            }catch(\Exception $e){
+                DB::rollback();
+                Toastr::error('Add Profile Information fail :)','Error');
+                return redirect()->back();
+            }
+        
+    }
  
-             $information = ProfileInformation::updateOrCreate(['rec_id' => $request->rec_id]);
-             $information->name         = $request->name;
-             $information->rec_id       = $request->rec_id;
-             $information->email        = $request->email;
-             $information->birth_date   = $request->birthDate;
-             $information->gender       = $request->gender;
-             $information->address      = $request->address;
-             $information->state        = $request->state;
-             $information->country      = $request->country;
-             $information->pin_code     = $request->pin_code;
-             $information->phone_number = $request->phone_number;
-             $information->department   = $request->department;
-             $information->designation  = $request->designation;
-             $information->reports_to   = $request->reports_to;
-             $information->save();
-             
-             DB::commit();
-             Toastr::success('Profile Information successfully :)','Success');
-             return redirect()->back();
-         }catch(\Exception $e){
-             DB::rollback();
-             Toastr::error('Add Profile Information fail :)','Error');
-             return redirect()->back();
-         }
-     }
- 
+
    
     // save new user
     public function addNewUserSave(Request $request)

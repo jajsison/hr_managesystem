@@ -210,7 +210,7 @@
                                                 <small class="text-muted">{{ Auth::user()->position }}</small>
                                                 <div class="staff-id">Employee ID : {{ Auth::user()->rec_id }}</div>
                                                 <div class="small doj text-muted">Date of Join : {{ Auth::user()->join_date }}</div>
-                                                <div class="staff-msg"><a class="btn btn-custom" href="chat.html">Send Message</a></div>
+                                                {{-- <div class="staff-msg"><a class="btn btn-custom" href="chat.html">Send Message</a></div> --}}
                                             </div>
                                         </div>
                                         <div class="col-md-7">
@@ -223,31 +223,74 @@
                                                     <div class="title">Email:</div>
                                                     <div class="text"><a href="">{{ Auth::user()->email }}</a></div>
                                                 </li>
-                                                <li>
-                                                    <div class="title">Birthday:</div>
-                                                    <div class="text">24th July</div>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Address:</div>
-                                                    <div class="text">1861 Bayonne Ave, Manchester Township, NJ, 08759</div>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Gender:</div>
-                                                    <div class="text">Male</div>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Reports to:</div>
-                                                    <div class="text">
-                                                        <div class="avatar-box">
-                                                            <div class="avatar avatar-xs">
-                                                                <img src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
+                                                @if(!empty($information))
+                                                    <li>
+                                                        @if(Auth::user()->rec_id == $information->rec_id)
+                                                        <div class="title">Birthday:</div>
+                                                        <div class="text">{{date('d F, Y',strtotime($information->birth_date)) }}</div>
+                                                        @else
+                                                        <div class="title">Birthday:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                                    </li>
+                                                    <li>
+                                                        @if(Auth::user()->rec_id == $information->rec_id)
+                                                        <div class="title">Address:</div>
+                                                        <div class="text">{{ $information->address }}</div>
+                                                        @else
+                                                        <div class="title">Address:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                                    </li>
+                                                    <li>
+                                                        @if(Auth::user()->rec_id == $information->rec_id)
+                                                        <div class="title">Gender:</div>
+                                                        <div class="text">{{ $information->gender }}</div>
+                                                        @else
+                                                        <div class="title">Gender:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Reports to:</div>
+                                                        <div class="text">
+                                                            <div class="avatar-box">
+                                                                <div class="avatar avatar-xs">
+                                                                    <img src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
+                                                                </div>
                                                             </div>
+                                                            <a href="profile.html">
+                                                                {{ Auth::user()->name }}
+                                                            </a>
                                                         </div>
-                                                        <a href="profile.html">
-                                                            {{ Auth::user()->name }}
-                                                        </a>
-                                                    </div>
-                                                </li>
+                                                    </li>
+                                                    @else
+                                                    <li>
+                                                        <div class="title">Birthday:</div>
+                                                        <div class="text">N/A</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Address:</div>
+                                                        <div class="text">N/A</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Gender:</div>
+                                                        <div class="text">N/A</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Reports to:</div>
+                                                        <div class="text">
+                                                            <div class="avatar-box">
+                                                                <div class="avatar avatar-xs">
+                                                                    <img src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
+                                                                </div>
+                                                            </div>
+                                                            <a href="profile.html">
+                                                                {{ Auth::user()->name }}
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                @endif    
                                             </ul>
                                         </div>
                                     </div>
@@ -258,14 +301,15 @@
                     </div>
                 </div>
             </div>
+
 					
             <div class="card tab-box">
                 <div class="row user-tabs">
                     <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
                         <ul class="nav nav-tabs nav-tabs-bottom">
                             <li class="nav-item"><a href="#emp_profile" data-toggle="tab" class="nav-link active">Profile</a></li>
-                            <li class="nav-item"><a href="#emp_projects" data-toggle="tab" class="nav-link">Projects</a></li>
-                            <li class="nav-item"><a href="#bank_statutory" data-toggle="tab" class="nav-link">Bank & Statutory <small class="text-danger">(Admin Only)</small></a></li>
+                            {{-- <li class="nav-item"><a href="#emp_projects" data-toggle="tab" class="nav-link">Projects</a></li>
+                            <li class="nav-item"><a href="#bank_statutory" data-toggle="tab" class="nav-link">Bank & Statutory <small class="text-danger">(Admin Only)</small></a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -281,12 +325,12 @@
                                     <h3 class="card-title">Personal Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
                                     <ul class="personal-info">
                                         <li>
-                                            <div class="title">Passport No.</div>
-                                            <div class="text">9876543210</div>
+                                            <div class="title">Nickname</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
-                                            <div class="title">Passport Exp Date.</div>
-                                            <div class="text">9876543210</div>
+                                            <div class="title">Personal Email</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Tel</div>
@@ -356,7 +400,40 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 d-flex">
+                        <div class="card profile-box flex-fill">
+                            <div class="card-body">
+                                <h3 class="card-title">Education Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#education_info"><i class="fa fa-pencil"></i></a></h3>
+                                <div class="experience-box">
+                                    <ul class="experience-list">
+                                        <li>
+                                            <div class="experience-user">
+                                                <div class="before-circle"></div>
+                                            </div>
+                                            <div class="experience-content">
+                                                <div class="timeline-content">
+                                                    <a href="#/" class="name">International College of Arts and Science (UG)</a>
+                                                    <div>Bsc Computer Science</div>
+                                                    <span class="time">2000 - 2003</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="experience-user">
+                                                <div class="before-circle"></div>
+                                            </div>
+                                            <div class="experience-content">
+                                                <div class="timeline-content">
+                                                    <a href="#/" class="name">International College of Arts and Science (PG)</a>
+                                                    <div>Msc Computer Science</div>
+                                                    <span class="time">2000 - 2003</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
                                     <h3 class="card-title">Bank information</h3>
@@ -380,7 +457,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
@@ -417,10 +494,11 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 d-flex">
+                    {{-- <div class="row"> --}}
+                        {{-- <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
                                     <h3 class="card-title">Education Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#education_info"><i class="fa fa-pencil"></i></a></h3>
@@ -454,8 +532,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 d-flex">
+                        </div> --}}
+                        {{-- <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
                                     <h3 class="card-title">Experience <a href="#" class="edit-icon" data-toggle="modal" data-target="#experience_info"><i class="fa fa-pencil"></i></a></h3>
@@ -498,13 +576,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> --}}
+                    {{-- </div> --}}
                 </div>
                 <!-- /Profile Info Tab -->
                 
                 <!-- Projects Tab -->
-                <div class="tab-pane fade" id="emp_projects">
+                {{-- <div class="tab-pane fade" id="emp_projects">
                     <div class="row">
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                             <div class="card">
@@ -758,11 +836,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- /Projects Tab -->
                 
                 <!-- Bank Statutory Tab -->
-                <div class="tab-pane fade" id="bank_statutory">
+                {{-- <div class="tab-pane fade" id="bank_statutory">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title"> Basic Salary Information</h3>
@@ -970,7 +1048,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- /Bank Statutory Tab -->
             </div>
         </div>

@@ -253,7 +253,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                {{-- <div class="form-group row">
                                     <label class="col-form-label col-md-2">Employee Permission</label>
                                     <div class="col-md-10">
                                         <div class="table-responsive m-t-15">
@@ -309,7 +309,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group row">
                                     <label class="col-form-label col-md-2"></label>
                                     <div class="col-md-10">
