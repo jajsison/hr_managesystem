@@ -1091,7 +1091,7 @@
                                             <div class="form-group">
                                                 <label>Birth Date</label>
                                                 <div class="cal-icon">
-                                                    <input class="form-control datetimepicker" type="text" id="birthDate" name="birthDate" value="">
+                                                    <input class="form-control datetimepicker" type="text" id="birthDate" name="birthDate" value="{{ $information->birth_date }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -1099,6 +1099,7 @@
                                             <div class="form-group">
                                                 <label>Gender</label>
                                                 <select class="select form-control" id="gender" name="gender">
+                                                    <option value="{{ $information->gender }}" {{ ( $information->gender == $information->gender) ? 'selected' : '' }}>{{ $information->gender }} </option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
@@ -1111,25 +1112,25 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" id="address" name="address" value="">
+                                        <input type="text" class="form-control" id="address" name="address" value="{{ $information->address }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>State</label>
-                                        <input type="text" class="form-control" id="state" name="state" value="">
+                                        <input type="text" class="form-control" id="state" name="state" value="{{ $information->state }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Country</label>
-                                        <input type="text" class="form-control" id="" name="country" value="">
+                                        <input type="text" class="form-control" id="" name="country" value="{{ $information->country }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Pin Code</label>
-                                        <input type="text" class="form-control" id="pin_code" name="pin_code" value="">
+                                        <input type="text" class="form-control" id="pin_code" name="pin_code" value="{{ $information->pin_code }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -1143,9 +1144,13 @@
                                         <label>Department <span class="text-danger">*</span></label>
                                         <select class="select" id="department" name="department">
                                             <option selected disabled>Select Department</option>
-                                            <option value="Web Development">Web Development</option>
+                                            <option value="Hr and Admin">HR and Admin</option>
                                             <option value="IT Management">IT Management</option>
                                             <option value="Marketing">Marketing</option>
+                                            <option value="Accounts">Accounts</option>
+                                            <option value="O2O">O2O</option>
+                                            <option value="House Experts">House Experts</option>
+                                            <option value="Rush Order">Rush Order</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1154,9 +1159,12 @@
                                         <label>Designation <span class="text-danger">*</span></label>
                                         <select class="select" id="" name="designation">
                                             <option selected disabled>Select Designation</option>
-                                            <option value="Web Designer">Web Designer</option>
-                                            <option value="Web Developer">Web Developer</option>
-                                            <option value="Android Developer">Android Developer</option>
+                                            <option value="Owner">Ownerr</option>
+                                            <option value="IT Manager">IT Manager</option>
+                                            <option value="HR and admin">HR and Admin</option>
+                                            <option value="Supervisor">Superisor</option>
+                                            <option value="Team Leader">Team Leader</option>
+                                            <option value="Agent">Agent</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1197,16 +1205,16 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Passport No</label>
+                                        <label>Nickname</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Passport Expiry Date</label>
-                                        <div class="cal-icon">
-                                            <input class="form-control datetimepicker" type="text">
-                                        </div>
+                                        <label>Personal Email</label>
+                                        
+                                            <input type="text" class="form-control">
+                                       
                                     </div>
                                 </div>
                                 <div class="col-md-6">

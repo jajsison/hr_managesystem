@@ -341,8 +341,15 @@ class EmployeeController extends Controller
     // employee profile
     public function profileEmployee($rec_id)
     {
+        $users = DB::table('profile_information')
+                ->join('users', 'users.rec_id', '=', 'profile_information.rec_id')
+                ->select('profile_information.*', 'users.*')
+                ->where('profile_information.rec_id','=',$rec_id)
+                ->first();
+
         $user = DB::table('users')->where('rec_id',$rec_id)->get();
-        return view('form.employeeprofile',compact('user'));
+        return view('form.employeeprofile',compact('user','users'));
+
     }
 }
 

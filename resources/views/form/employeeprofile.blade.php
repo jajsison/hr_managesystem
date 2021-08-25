@@ -226,15 +226,15 @@
                                                 
                                                 <li>
                                                     <div class="title">Birthday:</div>
-                                                    <div class="text">N/A</div>
+                                                    <div class="text">{{ Auth::user()->birth_date }}</div>
                                                 </li>
                                                 <li>
                                                     <div class="title">Address:</div>
-                                                    <div class="text">N/A</div>
+                                                    <div class="text">{{ Auth::user()->address }}</div>
                                                 </li>
                                                 <li>
                                                     <div class="title">Gender:</div>
-                                                    <div class="text">N/A</div>
+                                                    <div class="text">{{ Auth::user()->gender }}</div>
                                                 </li>
                                                 <li>
                                                     <div class="title">Reports to:</div>
@@ -1012,7 +1012,7 @@
                                             <div class="form-group">
                                                 <label>Birth Date</label>
                                                 <div class="cal-icon">
-                                                    <input class="form-control datetimepicker" type="text" id="birthDate" name="birthDate">
+                                                    <input class="form-control datetimepicker" type="text" id="birthDate" name="birthDate" value="{{ Auth::user()->birth_date }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -1020,6 +1020,7 @@
                                             <div class="form-group">
                                                 <label>Gender</label>
                                                 <select class="select form-control" id="gender" name="gender">
+                                                    <option value="{{ Auth::user()->gender }}" {{ ( Auth::user()->gender == Auth::user()->gender) ? 'selected' : '' }}>{{ Auth::user()->gender }} </option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
@@ -1032,31 +1033,31 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" id="address" name="address">
+                                        <input type="text" class="form-control" id="address" name="address" value="{{ Auth::user()->address }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>State</label>
-                                        <input type="text" class="form-control" id="state" name="state">
+                                        <input type="text" class="form-control" id="state" name="state" value="{{ Auth::user()->state }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Country</label>
-                                        <input type="text" class="form-control" id="" name="country">
+                                        <input type="text" class="form-control" id="" name="country" value="{{ Auth::user()->country }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Pin Code</label>
-                                        <input type="text" class="form-control" id="pin_code" name="pin_code">
+                                        <input type="text" class="form-control" id="pin_code" name="pin_code" value="{{ Auth::user()->pin_code }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" id="phoneNumber" name="phone_number">
+                                        <input type="text" class="form-control" id="phoneNumber" name="phone_number" value="{{ Auth::user()->phone_number }}">
                                     </div>
                                 </div>
 
@@ -1064,7 +1065,7 @@
                                     <div class="form-group">
                                         <label>Department <span class="text-danger">*</span></label>
                                         <select class="select" id="department" name="department">
-                                            <option selected disabled>Select Department</option>
+                                            <option value="{{ Auth::user()->department }}" {{ ( Auth::user()->department == Auth::user()->department) ? 'selected' : '' }}>{{ Auth::user()->department }} </option>
                                             <option value="IT Management">IT Management</option>
                                             <option value="Admin and HR">Admin and HR</option>
                                             <option value="Owner">Owner</option>
@@ -1080,8 +1081,8 @@
                                         <label>Designation <span class="text-danger">*</span></label>
                                         
                                         <select class="select" id="" name="designation">
-                                            <option selected disabled>Select Designation</option>
-                                            <option value="IT Assistant">IT Assistant</option>
+                                            <option value="{{ Auth::user()->designation }}" {{ ( Auth::user()->designation == Auth::user()->designation) ? 'selected' : '' }}>{{ Auth::user()->designation }} </option>
+                                            <option value="IT Assistant">Management</option>
                                             <option value="Web Developer">Web Developer</option>
                                             <option value="IT Manager">IT Manager</option>
                                             <option value="Owner">Owner</option>
@@ -1095,7 +1096,7 @@
                                     <div class="form-group">
                                         <label>Reports To <span class="text-danger">*</span></label>
                                         <select class="select" id="" name="reports_to">
-                                            <option selected disabled>-- select --</option>
+                                            <option value="{{ Auth::user()->reports_to }}" {{ ( Auth::user()->reports_to == Auth::user()->reports_to) ? 'selected' : '' }}>{{ Auth::user()->reports_to }} </option>
                                             @foreach ($user as $users )
                                             <option value="{{ $users->name }}">{{ $users->name }}</option>
                                             @endforeach
