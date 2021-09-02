@@ -22,5 +22,6 @@ class ProfileInformation extends Model
         'department',
         'designation',
         'reports_to',
+        
     ];
 }

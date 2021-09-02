@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Employee;
 use App\Models\Form;
 use App\Models\ProfileInformation;
+use App\Models\PersonalInformation;
 use App\Rules\MatchOldPassword;
 use Carbon\Carbon;
 use Session;
@@ -197,19 +198,78 @@ class UserManagementController extends Controller
                 $information->department   = $request->department;
                 $information->designation  = $request->designation;
                 $information->reports_to   = $request->reports_to;
+
+            //     $info = PersonalInformation::updateOrCreate(['rec_id' => $request->rec_id]);
+            //    $info->rec_id            = $request->rec_id;
+            //    $info->nickname          = $request->nickname;
+            //    $info->personal_email    = $request->personal_email;
+            //    $info->tel               = $request->tel;
+            //    $info->nationality       = $request->nationality;
+            //    $info->religion          = $request->religion;
+            //    $info->marital_status    = $request->marital_status;
+            //    $info->bankaccnum        = $request->bankaccnum;
+            //    $info->sssnum            = $request->sssnum;
+            //    $info->tinnum            = $request->tinnum;
+            //    $info->philhealth        = $request->philhealth;
+            //    $info->pagibigmidnum     = $request->pagibigmidnum;
+            //    $info->quote             = $request->quote;
+            //    $info->fbname            = $request->fbname;
+
+               $info->save();
+                
+
                 $information->save();
                 
                 DB::commit();
                 Toastr::success('Profile Information successfully :)','Success');
                 return redirect()->back();
             }catch(\Exception $e){
+                
                 DB::rollback();
                 Toastr::error('Add Profile Information fail :)','Error');
                 return redirect()->back();
             }
         
     }
- 
+    // save personal information
+    public function personalInformation(Request $request)
+    {
+
+        return 'hello';
+        //    try{
+            
+        //        $info = PersonalInformation::updateOrCreate(['rec_id' => $request->rec_id]);
+        //        $info->rec_id            = $request->rec_id;
+        //        $info->nickname          = $request->nickname;
+        //        $info->personal_email    = $request->personal_email;
+        //        $info->tel               = $request->tel;
+        //        $info->nationality       = $request->nationality;
+        //        $info->religion          = $request->religion;
+        //        $info->marital_status    = $request->marital_status;
+        //        $info->bankaccnum        = $request->bankaccnum;
+        //        $info->sssnum            = $request->sssnum;
+        //        $info->tinnum            = $request->tinnum;
+        //        $info->philhealth        = $request->philhealth;
+        //        $info->pagibigmidnum     = $request->pagibigmidnum;
+        //        $info->quote             = $request->quote;
+        //        $info->fbname            =$request->fbname;
+
+        //        $info->save();
+               
+        //        DB::commit();
+        //        Toastr::success('Personal Information successfully :)','Success');
+        //        return redirect()->back();
+        //    }catch(\Exception $e){
+               
+        //        DB::rollback();
+        //        Toastr::error('Add Personal Information fail :)','Error');
+        //        return redirect()->back();
+        //     // DB::commit();
+        //     //     Toastr::success('Personal Information successfully :)','Success');
+        //     //     return redirect()->back();
+        //    }
+       
+   }
 
    
     // save new user

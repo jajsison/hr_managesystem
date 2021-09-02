@@ -159,14 +159,14 @@
                             <li><a href="apptitude-result.html"> Aptitude Results </a></li>
                         </ul>
                     </li> --}}
-                    {{-- <li class="menu-title"> <span>Pages</span> </li>
+                     <li class="menu-title"> <span>Pages</span> </li>
                     <li class="submenu">
                         <a href="#"><i class="la la-user"></i> <span> Profile </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a class="active" href="{{ route('profile_user') }}"> Employee Profile </a></li>
-                            <li><a href="client-profile.html"> Client Profile </a></li>
+                            {{-- <li><a href="client-profile.html"> Client Profile </a></li> --}}
                         </ul>
-                    </li> --}}
+                    </li> 
                 </ul>
             </div>
         </div>
@@ -324,38 +324,216 @@
                                 <div class="card-body">
                                     <h3 class="card-title">Personal Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
                                     <ul class="personal-info">
+                                        @if(!empty($info))
                                         <li>
-                                            <div class="title">Nickname</div>
+                                                        {{-- <div class="title">Nickname:</div>
+                                                        <div class="text">N/A</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">Nickname:</div>
+                                                        <div class="text">{{ $info->nickname }}</div>
+                                                        @else
+                                                        <div class="title">Nickname:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">Personal Email:</div>
+                                                        <div class="text">N/A</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">Personal Email:</div>
+                                                        <div class="text">{{ $info->personal_email }}</div>
+                                                        @else
+                                                        <div class="title">Personal Email:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">Facebook Link/username</div>
+                                            <div class="text">N/A</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">Facebook Link/username:</div>
+                                                        <div class="text">{{ $info->fbname }}</div>
+                                                        @else
+                                                        <div class="title">Facebook Link/username:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">Tel:</div>
+                                            <div class="text">N/A</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">Tel:</div>
+                                                        <div class="text">{{ $info->tel }}</div>
+                                                        @else
+                                                        <div class="title">Tel:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">Nationality</div>
+                                            <div class="text">Indian</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">Nationality:</div>
+                                                        <div class="text">{{ $info->nationality }}</div>
+                                                        @else
+                                                        <div class="title">Nationality:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">Religion</div>
+                                            <div class="text">Christian</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">Religion:</div>
+                                                        <div class="text">{{ $info->religion }}</div>
+                                                        @else
+                                                        <div class="title">Religion:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">Marital status</div>
+                                            <div class="text">Married</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">Marital Status:</div>
+                                                        <div class="text">{{ $info->marital_status }}</div>
+                                                        @else
+                                                        <div class="title">Marital Status:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">Bank account number</div>
+                                            <div class="text">N/A</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">Bank Account Number:</div>
+                                                        <div class="text">{{ $info->bankaccnum }}</div>
+                                                        @else
+                                                        <div class="title">Bank Account Number:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">SSS number</div>
+                                            <div class="text">N/A</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">SSS number:</div>
+                                                        <div class="text">{{ $info->sssnum }}</div>
+                                                        @else
+                                                        <div class="title">SSS number:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">Tin #</div>
+                                            <div class="text">N/A</div> --}}
+
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                                        <div class="title">TIN Number:</div>
+                                                        <div class="text">{{ $info->tinnum }}</div>
+                                                        @else
+                                                        <div class="title">TIN number:</div>
+                                                        <div class="text">N/A</div>
+                                                        @endif
+
+                                        </li>
+                                        <li>
+                                            {{-- <div class="title">PhilHealth</div>
+                                            <div class="text">N/A</div> --}}
+
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            <div class="title">PhilHealth:</div>
+                                            <div class="text">{{ $info->philhealth }}</div>
+                                            @else
+                                            <div class="title">PhilHealth:</div>
                                             <div class="text">N/A</div>
+                                            @endif
+
                                         </li>
                                         <li>
-                                            <div class="title">Personal Email</div>
+                                            {{-- <div class="title">Pagibig MID number</div>
+                                            <div class="text">N/A</div> --}}
+
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            <div class="title">Pagibig MID number:</div>
+                                            <div class="text">{{ $info->pagibigmidnum }}</div>
+                                            @else
+                                            <div class="title">PhilHealth:</div>
                                             <div class="text">N/A</div>
+                                            @endif
+
                                         </li>
                                         <li>
-                                            <div class="title">Tel</div>
-                                            <div class="text"><a href="">9876543210</a></div>
+                                            {{-- <div class="title">We would like to hear from you</div>
+                                            <div class="text">N/A</div> --}}
+                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            <div class="title">We would like to hear from you:</div>
+                                            <div class="text">{{ $info->quote }}</div>
+                                            @else
+                                            <div class="title">We would like to hear from you:</div>
+                                            <div class="text">N/A</div>
+                                            @endif
+
                                         </li>
-                                        <li>
-                                            <div class="title">Nationality</div>
-                                            <div class="text">Indian</div>
-                                        </li>
-                                        <li>
-                                            <div class="title">Religion</div>
-                                            <div class="text">Christian</div>
-                                        </li>
-                                        <li>
-                                            <div class="title">Marital status</div>
-                                            <div class="text">Married</div>
-                                        </li>
-                                        <li>
-                                            <div class="title">Employment of spouse</div>
-                                            <div class="text">No</div>
-                                        </li>
-                                        <li>
-                                            <div class="title">No. of children</div>
-                                            <div class="text">2</div>
-                                        </li>
+                                       @else
+                                       <li>
+                                         
+                                        <div class="title">Nickname:</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    <li>
+                                         
+                                        <div class="title">Personal Email:</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    
+                                    <li>
+                                        <div class="title">Facebook Link/username</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    
+                                       <li>
+                                         
+                                        <div class="title">Tel</div>
+                                        <div class="text"><a href="">9876543210</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Nationality</div>
+                                        <div class="text">Filipino</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Religion</div>
+                                        <div class="text">Christian</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Marital status</div>
+                                        <div class="text">Single</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Bank account number</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">SSS number</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Tin #</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">PhilHealth</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Pagibig MID number</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    <li>
+                                        <div class="title">We would like to hear from you</div>
+                                        <div class="text">N/A</div>
+                                    </li>
+                                    @endif
                                     </ul>
                                 </div>
                             </div>
@@ -1091,7 +1269,7 @@
                                             <div class="form-group">
                                                 <label>Birth Date</label>
                                                 <div class="cal-icon">
-                                                    <input class="form-control datetimepicker" type="text" id="birthDate" name="birthDate" value="{{ $information->birth_date }}">
+                                                    <input class="form-control datetimepicker" type="text" id="birthDate" name="birthDate" >
                                                 </div>
                                             </div>
                                         </div>
@@ -1099,7 +1277,7 @@
                                             <div class="form-group">
                                                 <label>Gender</label>
                                                 <select class="select form-control" id="gender" name="gender">
-                                                    <option value="{{ $information->gender }}" {{ ( $information->gender == $information->gender) ? 'selected' : '' }}>{{ $information->gender }} </option>
+                                                    
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
@@ -1112,31 +1290,31 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" id="address" name="address" value="{{ $information->address }}">
+                                        <input type="text" class="form-control" id="address" name="address">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>State</label>
-                                        <input type="text" class="form-control" id="state" name="state" value="{{ $information->state }}">
+                                        <input type="text" class="form-control" id="state" name="state" >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Country</label>
-                                        <input type="text" class="form-control" id="" name="country" value="{{ $information->country }}">
+                                        <input type="text" class="form-control" id="" name="country" >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Pin Code</label>
-                                        <input type="text" class="form-control" id="pin_code" name="pin_code" value="{{ $information->pin_code }}">
+                                        <input type="text" class="form-control" id="pin_code" name="pin_code" >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" id="phoneNumber" name="phone_number" value="">
+                                        <input type="text" class="form-control" id="phoneNumber" name="phone_number">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -1157,9 +1335,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Designation <span class="text-danger">*</span></label>
-                                        <select class="select" id="" name="designation">
+                                        <select class="select" id="designation" name="designation">
                                             <option selected disabled>Select Designation</option>
-                                            <option value="Owner">Ownerr</option>
+                                            <option value="Owner">Owner</option>
                                             <option value="IT Manager">IT Manager</option>
                                             <option value="HR and admin">HR and Admin</option>
                                             <option value="Supervisor">Superisor</option>
@@ -1201,64 +1379,99 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ route('personal/information/save') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        
+                                        <input type="hidden" class="form-control" id="rec_id" name="rec_id" value="{{ Auth::user()->rec_id }}">
                                         <label>Nickname</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id ="nickname" name="nickname">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Personal Email</label>
                                         
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" id="personal_email" name="personal_email">
                                        
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tel</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" id="tel" name="tel">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nationality <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" id ="nationality" name="nationality">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
-                                        <div class="cal-icon">
-                                            <input class="form-control" type="text">
-                                        </div>
+                                       
+                                            <input class="form-control" type="text"  id ="religion" name="religion">
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Marital status <span class="text-danger">*</span></label>
-                                        <select class="select form-control">
+                                        <select class="select form-control"  id ="marital_status" name="marital_status">
                                             <option>-</option>
                                             <option>Single</option>
                                             <option>Married</option>
                                         </select>
                                     </div>
                                 </div>
+                             
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Employment of spouse</label>
-                                        <input class="form-control" type="text">
+                                        <label>Bank Account number <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" id="bankaccnum" name="bankaccnum" >
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No. of children </label>
-                                        <input class="form-control" type="text">
+                                        <label>SSS number <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" id ="sssnum" name="sssnum" >
                                     </div>
                                 </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>TIN # <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" id ="tinnum" name ="tinnum" >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>PhilHealth <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" id ="philhealth" name="philhealth" >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Pagibig MID number <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" id="pagibignum" name="pagibigmidnum" >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>We would like to hear from you <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" id="quote" name="quote" >
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>

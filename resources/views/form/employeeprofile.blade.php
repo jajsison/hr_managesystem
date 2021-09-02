@@ -226,15 +226,16 @@
                                                 
                                                 <li>
                                                     <div class="title">Birthday:</div>
-                                                    <div class="text">{{ Auth::user()->birth_date }}</div>
+                                                    <div class="text">{{ $users->birth_date }}</div>
                                                 </li>
                                                 <li>
                                                     <div class="title">Address:</div>
-                                                    <div class="text">{{ Auth::user()->address }}</div>
+                                                    <div class="text">{{ $users->address }}</div>
                                                 </li>
                                                 <li>
                                                     <div class="title">Gender:</div>
-                                                    <div class="text">{{ Auth::user()->gender }}</div>
+                                                    <div class="text">{{ $users->gender }}</div>
+
                                                 </li>
                                                 <li>
                                                     <div class="title">Reports to:</div>
@@ -290,30 +291,49 @@
                                             <div class="text">N/A</div>
                                         </li>
                                         <li>
+                                            <div class="title">Facebook Link/Username</div>
+                                            <div class="text">N/A</div>
+                                        </li>
+                                        <li>
                                             <div class="title">Tel</div>
-                                            <div class="text"><a href="">9876543210</a></div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Nationality</div>
-                                            <div class="text">Filipino</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Religion</div>
-                                            <div class="text">Christian</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Marital status</div>
-                                            <div class="text">Married</div>
+                                            <div class="text">Single</div>
                                         </li>
                                         <li>
-                                            <div class="title">Employment of spouse</div>
-                                            <div class="text">No</div>
+                                            <div class="title">Bank account number</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
-                                            <div class="title">No. of children</div>
-                                            <div class="text">2</div>
+                                            <div class="title">SSS number</div>
+                                            <div class="text">N/A</div>
                                         </li>
-                                    </ul>
+                                        <li>
+                                            <div class="title">Tin #</div>
+                                            <div class="text">N/A</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">PhilHealth</div>
+                                            <div class="text">N/A</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Pagibig MID number</div>
+                                            <div class="text">N/A</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">We would like to hear from you</div>
+                                            <div class="text">n/a</div>
+                                        </li>
                                 </div>
                             </div>
                         </div>
@@ -355,9 +375,44 @@
                                 </div>
                             </div>
                         </div>
-                    {{-- </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-6 d-flex">
+                            <div class="card profile-box flex-fill">
+                                <div class="card-body">
+                                    <h3 class="card-title">Education Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#education_info"><i class="fa fa-pencil"></i></a></h3>
+                                    <div class="experience-box">
+                                        <ul class="experience-list">
+                                            <li>
+                                                <div class="experience-user">
+                                                    <div class="before-circle"></div>
+                                                </div>
+                                                <div class="experience-content">
+                                                    <div class="timeline-content">
+                                                        <a href="#/" class="name">International College of Arts and Science (UG)</a>
+                                                        <div>Bsc Computer Science</div>
+                                                        <span class="time">2000 - 2003</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="experience-user">
+                                                    <div class="before-circle"></div>
+                                                </div>
+                                                <div class="experience-content">
+                                                    <div class="timeline-content">
+                                                        <a href="#/" class="name">International College of Arts and Science (PG)</a>
+                                                        <div>Msc Computer Science</div>
+                                                        <span class="time">2000 - 2003</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
                                     <h3 class="card-title">Bank information</h3>
@@ -381,7 +436,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>  --}}
                         <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
@@ -421,41 +476,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 d-flex">
-                            <div class="card profile-box flex-fill">
-                                <div class="card-body">
-                                    <h3 class="card-title">Education Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#education_info"><i class="fa fa-pencil"></i></a></h3>
-                                    <div class="experience-box">
-                                        <ul class="experience-list">
-                                            <li>
-                                                <div class="experience-user">
-                                                    <div class="before-circle"></div>
-                                                </div>
-                                                <div class="experience-content">
-                                                    <div class="timeline-content">
-                                                        <a href="#/" class="name">International College of Arts and Science (UG)</a>
-                                                        <div>Bsc Computer Science</div>
-                                                        <span class="time">2000 - 2003</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="experience-user">
-                                                    <div class="before-circle"></div>
-                                                </div>
-                                                <div class="experience-content">
-                                                    <div class="timeline-content">
-                                                        <a href="#/" class="name">International College of Arts and Science (PG)</a>
-                                                        <div>Msc Computer Science</div>
-                                                        <span class="time">2000 - 2003</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
                         {{-- <div class="col-md-6 d-flex">
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
@@ -988,31 +1010,33 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('profile/information/save') }}" method="POST">
+                        <form action="{{ route('profile/information/save') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="profile-img-wrap edit-img">
-                                        <img class="inline-block" src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
+                                        <img class="inline-block" src="{{ URL::to('/assets/images/'. $users->avatar) }}" alt="{{ $users->name }}">
                                         <div class="fileupload btn">
                                             <span class="btn-text">edit</span>
-                                            <input class="upload" type="file" id="upload" name="upload">
+                                            <input class="upload" type="file" id="image" name="images">
+                                            <input type="hidden" name="hidden_image" id="e_image" value="{{ $users->avatar }}">
+
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Full Name</label>
-                                                <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}">
-                                                <input type="hidden" class="form-control" id="rec_id" name="rec_id" value="{{ Auth::user()->rec_id }}">
-                                                <input type="hidden" class="form-control" id="email" name="email" value="{{ Auth::user()->email }}">
+                                                <input type="text" class="form-control" id="name" name="name" value="{{ $users->name }}">
+                                                <input type="hidden" class="form-control" id="rec_id" name="rec_id" value="{{ $users->rec_id }}">
+                                                <input type="hidden" class="form-control" id="email" name="email" value="{{ $users->email }}">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Birth Date</label>
                                                 <div class="cal-icon">
-                                                    <input class="form-control datetimepicker" type="text" id="birthDate" name="birthDate" value="{{ Auth::user()->birth_date }}">
+                                                    <input class="form-control datetimepicker" type="text" id="birthDate" name="birthDate" value="{{ $users->birth_date }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -1020,7 +1044,7 @@
                                             <div class="form-group">
                                                 <label>Gender</label>
                                                 <select class="select form-control" id="gender" name="gender">
-                                                    <option value="{{ Auth::user()->gender }}" {{ ( Auth::user()->gender == Auth::user()->gender) ? 'selected' : '' }}>{{ Auth::user()->gender }} </option>
+                                                    <option value="{{ $users->gender }}" {{ ( $users->gender == $users->gender) ? 'selected' : '' }}>{{ $users->gender}} </option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
@@ -1033,31 +1057,31 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" id="address" name="address" value="{{ Auth::user()->address }}">
+                                        <input type="text" class="form-control" id="address" name="address" value="{{ $users->address }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>State</label>
-                                        <input type="text" class="form-control" id="state" name="state" value="{{ Auth::user()->state }}">
+                                        <input type="text" class="form-control" id="state" name="state" value="{{ $users->state }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Country</label>
-                                        <input type="text" class="form-control" id="" name="country" value="{{ Auth::user()->country }}">
+                                        <input type="text" class="form-control" id="" name="country" value="{{ $users->country }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Pin Code</label>
-                                        <input type="text" class="form-control" id="pin_code" name="pin_code" value="{{ Auth::user()->pin_code }}">
+                                        <input type="text" class="form-control" id="pin_code" name="pin_code" value="{{ $users->pin_code }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" id="phoneNumber" name="phone_number" value="{{ Auth::user()->phone_number }}">
+                                        <input type="text" class="form-control" id="phoneNumber" name="phone_number" value="{{ $users->phone_number }}">
                                     </div>
                                 </div>
 
@@ -1065,7 +1089,7 @@
                                     <div class="form-group">
                                         <label>Department <span class="text-danger">*</span></label>
                                         <select class="select" id="department" name="department">
-                                            <option value="{{ Auth::user()->department }}" {{ ( Auth::user()->department == Auth::user()->department) ? 'selected' : '' }}>{{ Auth::user()->department }} </option>
+                                            <option value="{{ $users->department }}" {{ ( $users->department == $users->department) ? 'selected' : '' }}>{{ $users->department}} </option>
                                             <option value="IT Management">IT Management</option>
                                             <option value="Admin and HR">Admin and HR</option>
                                             <option value="Owner">Owner</option>
@@ -1081,7 +1105,7 @@
                                         <label>Designation <span class="text-danger">*</span></label>
                                         
                                         <select class="select" id="" name="designation">
-                                            <option value="{{ Auth::user()->designation }}" {{ ( Auth::user()->designation == Auth::user()->designation) ? 'selected' : '' }}>{{ Auth::user()->designation }} </option>
+                                            <option value="{{ $users->designation}}" {{ ( $users->designation == $users->designation) ? 'selected' : '' }}>{{ $users->designation}} </option>
                                             <option value="IT Assistant">Management</option>
                                             <option value="Web Developer">Web Developer</option>
                                             <option value="IT Manager">IT Manager</option>
@@ -1096,7 +1120,7 @@
                                     <div class="form-group">
                                         <label>Reports To <span class="text-danger">*</span></label>
                                         <select class="select" id="" name="reports_to">
-                                            <option value="{{ Auth::user()->reports_to }}" {{ ( Auth::user()->reports_to == Auth::user()->reports_to) ? 'selected' : '' }}>{{ Auth::user()->reports_to }} </option>
+                                            <option value="{{ $users->reports_to }}" {{ ( $users->reports_to == $users->reports_to) ? 'selected' : '' }}>{{ $users->reports_to }} </option>
                                             @foreach ($user as $users )
                                             <option value="{{ $users->name }}">{{ $users->name }}</option>
                                             @endforeach
@@ -1130,34 +1154,34 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nickname</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name ="nickname" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Personal Email</label>
                                         
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="peronal_email" value="">
                                         
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tel</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="tel" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nationality <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name ="nationality">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
                                         
-                                            <input class="form-control" type="text">
+                                            <input class="form-control" type="text" name="religion" value=" ">
                                         
                                     </div>
                                 </div>
@@ -1165,7 +1189,7 @@
                                     <div class="form-group">
                                         <label>Marital status <span class="text-danger">*</span></label>
                                         <select class="select form-control">
-                                            <option>-</option>
+                                            {{-- <option value="{{ $users->marital_status}}" {{ ( $users->marital_status == $users->marital_status) ? 'selected' : '' }}>{{ $users->marital_status}} </option> --}}
                                             <option>Single</option>
                                             <option>Married</option>
                                         </select>
@@ -1173,16 +1197,49 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Employment of spouse</label>
-                                        <input class="form-control" type="text">
+                                        <label>Bank Account number <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" name="bankaccnum" >
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No. of children </label>
-                                        <input class="form-control" type="text">
+                                        <label>SSS number <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" name="sssnum" value="">
                                     </div>
                                 </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>TIN # <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" name ="tinnum" value="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>PhilHealth <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" name="philhealth" value="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Pagibig MID number <span class="text-danger"></span></label>
+                                        <input class="form-control" type="text" name="pagibigmidnum" value="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>We would like to hear from you <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" name="quote" value="">
+                                    </div>
+                                </div>
+
+                                
+                                
                             </div>
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>

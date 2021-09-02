@@ -191,7 +191,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                     <div class="card dash-widget">
                         <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-cubes"></i></span>
@@ -308,11 +308,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- message --}}
             {!! Toastr::message() !!}
             <!-- Statistics Widget -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-12 col-lg-12 col-xl-4 d-flex">
                     <div class="card flex-fill dash-statistics">
                         <div class="card-body">
@@ -423,9 +423,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- /Statistics Widget -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-6 d-flex">
                     <div class="card card-table flex-fill">
                         <div class="card-header">
@@ -481,8 +481,8 @@
                             <a href="invoices.html">View all invoices</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 d-flex">
+                </div> --}}
+                {{-- <div class="col-md-6 d-flex">
                     <div class="card card-table flex-fill">
                         <div class="card-header">
                             <h3 class="card-title mb-0">Payments</h3>
@@ -532,9 +532,9 @@
                             <a href="payments.html">View all payments</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-6 d-flex">
                     <div class="card card-table flex-fill">
                         <div class="card-header">
@@ -908,7 +908,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <!-- /Page Content -->
     </div>

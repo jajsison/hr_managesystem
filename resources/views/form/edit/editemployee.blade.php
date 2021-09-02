@@ -270,10 +270,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php
-                                                    $key = 0;
-                                                    $key1 = 0;
-                                                    ?>
+                                                    
                                                     @foreach ($permission as $items )
                                                     <tr>
                                                         <td>{{ $items->module_permission }}</td>

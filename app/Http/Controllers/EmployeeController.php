@@ -344,7 +344,7 @@ class EmployeeController extends Controller
         $users = DB::table('profile_information')
                 ->join('users', 'users.rec_id', '=', 'profile_information.rec_id')
                 ->select('profile_information.*', 'users.*')
-                ->where('profile_information.rec_id','=',$rec_id)
+                ->where('profile_information.rec_id','=', $rec_id)
                 ->first();
 
         $user = DB::table('users')->where('rec_id',$rec_id)->get();
