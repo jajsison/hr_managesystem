@@ -1154,40 +1154,40 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nickname</label>
-                                        <input type="text" class="form-control" name ="nickname" value="">
+                                        <input type="text" class="form-control" id ="nickname" name ="nickname" value="{{ $users->nickname }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Personal Email</label>
                                         
-                                            <input type="text" class="form-control" name="peronal_email" value="">
+                                            <input type="text" class="form-control" id ="personal_email" name="peronal_email" value="{{ $users->personal_email }}">
                                         
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Facebook name/Username</label>
-                                        <input class="form-control" type="fbname" name="fbname" value="">
+                                        <input class="form-control" type="text" id ="fbname" name="fbname" value="{{ $users->fbname }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tel</label>
-                                        <input class="form-control" type="tel" name="tel" value="">
+                                        <input class="form-control" type="text" id="tel" name="tel" value="{{ $users->tel }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nationality <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="nationality" name ="nationality">
+                                        <input class="form-control" type="text" id = "nationality" name ="nationality" value ="{{ $users->nationality }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
                                         
-                                            <input class="form-control" type="religion" name="religion" value=" ">
+                                            <input class="form-control" type="text" id ="religion" name="religion" value=" {{ $users->religion }}">
                                         
                                     </div>
                                 </div>
@@ -1204,14 +1204,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Bank Account number <span class="text-danger"></span></label>
-                                        <input class="form-control" type="bankaccnum" name="bankaccnum" >
+                                        <input class="form-control" type="text" id ="bankaccnum" name="bankaccnum" value="{{ $users->bankaccnum }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>SSS number <span class="text-danger"></span></label>
-                                        <input class="form-control" type="sssnum" name="sssnum" value="">
+                                        <input class="form-control" type="text" id ="sssnum" name="sssnum" value="{{ $users->sssnum }}">
                                     </div>
                                 </div>
 
@@ -1219,28 +1219,28 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>TIN # <span class="text-danger"></span></label>
-                                        <input class="form-control" type="tinnum" name ="tinnum" value="">
+                                        <input class="form-control" type="text" id ="tinnum" name ="tinnum" value="{{ $users->tinnum }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>PhilHealth <span class="text-danger"></span></label>
-                                        <input class="form-control" type="philhealth" name="philhealth" value="">
+                                        <input class="form-control" type="philhealth" name="philhealth" value="{{ $users->philhealth }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Pagibig MID number <span class="text-danger"></span></label>
-                                        <input class="form-control" type="pagibigmidnum" name="pagibigmidnum" value="">
+                                        <input class="form-control" type="pagibigmidnum" name="pagibigmidnum" value="{{ $users->pagibigmidnum }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>We would like to hear from you <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="quote" name="quote" value="">
+                                        <input class="form-control" type="quote" name="quote" value="{{ $users->quote }}">
                                     </div>
                                 </div>
 
