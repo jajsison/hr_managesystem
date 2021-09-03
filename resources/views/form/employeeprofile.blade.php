@@ -1167,21 +1167,27 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label>Facebook name/Username</label>
+                                        <input class="form-control" type="fbname" name="fbname" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label>Tel</label>
-                                        <input class="form-control" type="text" name="tel" value="">
+                                        <input class="form-control" type="tel" name="tel" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nationality <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" name ="nationality">
+                                        <input class="form-control" type="nationality" name ="nationality">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
                                         
-                                            <input class="form-control" type="text" name="religion" value=" ">
+                                            <input class="form-control" type="religion" name="religion" value=" ">
                                         
                                     </div>
                                 </div>
@@ -1198,14 +1204,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Bank Account number <span class="text-danger"></span></label>
-                                        <input class="form-control" type="text" name="bankaccnum" >
+                                        <input class="form-control" type="bankaccnum" name="bankaccnum" >
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>SSS number <span class="text-danger"></span></label>
-                                        <input class="form-control" type="text" name="sssnum" value="">
+                                        <input class="form-control" type="sssnum" name="sssnum" value="">
                                     </div>
                                 </div>
 
@@ -1213,28 +1219,28 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>TIN # <span class="text-danger"></span></label>
-                                        <input class="form-control" type="text" name ="tinnum" value="">
+                                        <input class="form-control" type="tinnum" name ="tinnum" value="">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>PhilHealth <span class="text-danger"></span></label>
-                                        <input class="form-control" type="text" name="philhealth" value="">
+                                        <input class="form-control" type="philhealth" name="philhealth" value="">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Pagibig MID number <span class="text-danger"></span></label>
-                                        <input class="form-control" type="text" name="pagibigmidnum" value="">
+                                        <input class="form-control" type="pagibigmidnum" name="pagibigmidnum" value="">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>We would like to hear from you <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" name="quote" value="">
+                                        <input class="form-control" type="quote" name="quote" value="">
                                     </div>
                                 </div>
 

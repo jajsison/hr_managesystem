@@ -328,7 +328,7 @@
                                         <li>
                                                         {{-- <div class="title">Nickname:</div>
                                                         <div class="text">N/A</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">Nickname:</div>
                                                         <div class="text">{{ $info->nickname }}</div>
                                                         @else
@@ -339,7 +339,7 @@
                                         <li>
                                             {{-- <div class="title">Personal Email:</div>
                                                         <div class="text">N/A</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">Personal Email:</div>
                                                         <div class="text">{{ $info->personal_email }}</div>
                                                         @else
@@ -350,7 +350,7 @@
                                         <li>
                                             {{-- <div class="title">Facebook Link/username</div>
                                             <div class="text">N/A</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">Facebook Link/username:</div>
                                                         <div class="text">{{ $info->fbname }}</div>
                                                         @else
@@ -361,7 +361,7 @@
                                         <li>
                                             {{-- <div class="title">Tel:</div>
                                             <div class="text">N/A</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">Tel:</div>
                                                         <div class="text">{{ $info->tel }}</div>
                                                         @else
@@ -372,7 +372,7 @@
                                         <li>
                                             {{-- <div class="title">Nationality</div>
                                             <div class="text">Indian</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">Nationality:</div>
                                                         <div class="text">{{ $info->nationality }}</div>
                                                         @else
@@ -383,7 +383,7 @@
                                         <li>
                                             {{-- <div class="title">Religion</div>
                                             <div class="text">Christian</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">Religion:</div>
                                                         <div class="text">{{ $info->religion }}</div>
                                                         @else
@@ -394,7 +394,7 @@
                                         <li>
                                             {{-- <div class="title">Marital status</div>
                                             <div class="text">Married</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">Marital Status:</div>
                                                         <div class="text">{{ $info->marital_status }}</div>
                                                         @else
@@ -405,7 +405,7 @@
                                         <li>
                                             {{-- <div class="title">Bank account number</div>
                                             <div class="text">N/A</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">Bank Account Number:</div>
                                                         <div class="text">{{ $info->bankaccnum }}</div>
                                                         @else
@@ -416,7 +416,7 @@
                                         <li>
                                             {{-- <div class="title">SSS number</div>
                                             <div class="text">N/A</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">SSS number:</div>
                                                         <div class="text">{{ $info->sssnum }}</div>
                                                         @else
@@ -428,7 +428,7 @@
                                             {{-- <div class="title">Tin #</div>
                                             <div class="text">N/A</div> --}}
 
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                                         <div class="title">TIN Number:</div>
                                                         <div class="text">{{ $info->tinnum }}</div>
                                                         @else
@@ -441,7 +441,7 @@
                                             {{-- <div class="title">PhilHealth</div>
                                             <div class="text">N/A</div> --}}
 
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                             <div class="title">PhilHealth:</div>
                                             <div class="text">{{ $info->philhealth }}</div>
                                             @else
@@ -454,7 +454,7 @@
                                             {{-- <div class="title">Pagibig MID number</div>
                                             <div class="text">N/A</div> --}}
 
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                             <div class="title">Pagibig MID number:</div>
                                             <div class="text">{{ $info->pagibigmidnum }}</div>
                                             @else
@@ -466,7 +466,7 @@
                                         <li>
                                             {{-- <div class="title">We would like to hear from you</div>
                                             <div class="text">N/A</div> --}}
-                                            @if(Auth::user()->profile_information.rec_id == $info->profile_information.rec_id)
+                                            @if(Auth::user()->rec_id == $info->rec_id)
                                             <div class="title">We would like to hear from you:</div>
                                             <div class="text">{{ $info->quote }}</div>
                                             @else
@@ -1302,19 +1302,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Country</label>
-                                        <input type="text" class="form-control" id="" name="country" >
+                                        <input type="text" class="form-control" id="country" name="country" >
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Pin Code</label>
-                                        <input type="text" class="form-control" id="pin_code" name="pin_code" >
-                                    </div>
-                                </div>
+                                
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" id="phoneNumber" name="phone_number">
+                                        <input type="text" class="form-control" id="phone_number" name="phone_number">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -1351,9 +1346,9 @@
                                         <label>Reports To <span class="text-danger">*</span></label>
                                         <select class="select" id="" name="reports_to">
                                             <option selected disabled>-- select --</option>
-                                            <option value="Wilmer Deluna">Wilmer Deluna</option>
-                                            <option value="Lesley Grauer">Lesley Grauer</option>
-                                            <option value="Jeffery Lalor">Jeffery Lalor</option>
+                                            <option value="Mike Cruz">Mike Cruz</option>
+                                            <option value="KR Rivero">KR Rivero</option>
+                                           
                                         </select>
                                     </div>
                                 </div>
@@ -1395,6 +1390,14 @@
                                         <label>Personal Email</label>
                                         
                                             <input type="text" class="form-control" id="personal_email" name="personal_email">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Fb name/username </label>
+                                        
+                                            <input type="text" class="form-control" id="fbname" name="fbname">
                                        
                                     </div>
                                 </div>

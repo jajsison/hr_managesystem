@@ -15,6 +15,7 @@ use Carbon\Carbon;
 use Session;
 use Auth;
 use Hash;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class UserManagementController extends Controller
 {
@@ -183,7 +184,7 @@ class UserManagementController extends Controller
                     ];
                     User::where('rec_id',$request->rec_id)->update($update);
                 } 
-    
+                
                 $information = ProfileInformation::updateOrCreate(['rec_id' => $request->rec_id]);
                 $information->name         = $request->name;
                 $information->rec_id       = $request->rec_id;
@@ -198,25 +199,6 @@ class UserManagementController extends Controller
                 $information->department   = $request->department;
                 $information->designation  = $request->designation;
                 $information->reports_to   = $request->reports_to;
-
-            //     $info = PersonalInformation::updateOrCreate(['rec_id' => $request->rec_id]);
-            //    $info->rec_id            = $request->rec_id;
-            //    $info->nickname          = $request->nickname;
-            //    $info->personal_email    = $request->personal_email;
-            //    $info->tel               = $request->tel;
-            //    $info->nationality       = $request->nationality;
-            //    $info->religion          = $request->religion;
-            //    $info->marital_status    = $request->marital_status;
-            //    $info->bankaccnum        = $request->bankaccnum;
-            //    $info->sssnum            = $request->sssnum;
-            //    $info->tinnum            = $request->tinnum;
-            //    $info->philhealth        = $request->philhealth;
-            //    $info->pagibigmidnum     = $request->pagibigmidnum;
-            //    $info->quote             = $request->quote;
-            //    $info->fbname            = $request->fbname;
-
-               $info->save();
-                
 
                 $information->save();
                 
@@ -234,14 +216,45 @@ class UserManagementController extends Controller
     // save personal information
     public function personalInformation(Request $request)
     {
-
-        return 'hello';
+        try{
+            
+        
+        $info = PersonalInformation::updateOrCreate(['rec_id' =>$request->rec_id]);
+        $info->rec_id            = $request->rec_id;
+        $info->nickname          = $request->nickname;
+        $info->personal_email    = $request->personal_email;
+        $info->fbname            = $request->fbname;
+        $info->tel               = $request->tel;
+        $info->nationality       = $request->nationality;
+        $info->religion          = $request->religion;
+        $info->marital_status    = $request->marital_status;
+        $info->bankaccnum        = $request->bankaccnum;
+        $info->sssnum            = $request->sssnum;
+        $info->tinnum            = $request->tinnum;
+        $info->philhealth        = $request->philhealth;
+        $info->pagibigmidnum     = $request->pagibigmidnum;
+        $info->quote             = $request->quote;
+        $info->save();
+               
+               DB::commit();
+               Toastr::success('Personal Information successfully :)','Success');
+               return redirect()->back();
+            }catch(\Exception $e){
+                
+                DB::rollback();
+                Toastr::error('Add Profile Information fail :)','Error');
+                return redirect()->back();
+            }}
+        
+        
+        
         //    try{
             
-        //        $info = PersonalInformation::updateOrCreate(['rec_id' => $request->rec_id]);
+        //        $info = new PersonalInformation();
         //        $info->rec_id            = $request->rec_id;
         //        $info->nickname          = $request->nickname;
         //        $info->personal_email    = $request->personal_email;
+        //        $info->fbname            =$request->fbname;
         //        $info->tel               = $request->tel;
         //        $info->nationality       = $request->nationality;
         //        $info->religion          = $request->religion;
@@ -252,8 +265,7 @@ class UserManagementController extends Controller
         //        $info->philhealth        = $request->philhealth;
         //        $info->pagibigmidnum     = $request->pagibigmidnum;
         //        $info->quote             = $request->quote;
-        //        $info->fbname            =$request->fbname;
-
+              
         //        $info->save();
                
         //        DB::commit();
@@ -264,12 +276,10 @@ class UserManagementController extends Controller
         //        DB::rollback();
         //        Toastr::error('Add Personal Information fail :)','Error');
         //        return redirect()->back();
-        //     // DB::commit();
-        //     //     Toastr::success('Personal Information successfully :)','Success');
-        //     //     return redirect()->back();
+            
         //    }
-       
-   }
+          
+   
 
    
     // save new user

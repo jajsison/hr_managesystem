@@ -29,17 +29,7 @@ class CreateProfileInformationTable extends Migration
             $table->string('designation')->nullable();
             $table->string('reports_to')->nullable();
             
-            $table->string('personal_email')->nullable();
-            $table->string('fbname')->nullable();
-            $table->string('tel')->nullable();
-            $table->string('nationality')->nullable();
-            $table->string('religion')->nullable();
-            $table->string('marital_status')->nullable();
-            $table->string('bankaccnum')->nullable();
-            $table->string('tinnum')->nullable();
-            $table->string('philhealth')->nullable();
-            $table->string('pagibigmidnum')->nullable();
-            $table->string('quote')->nullable();
+            
 
             $table->timestamps();
         });
