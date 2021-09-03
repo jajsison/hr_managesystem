@@ -136,17 +136,22 @@ class UserManagementController extends Controller
         if(empty($employees))
         {
             $information = DB::table('profile_information')->where('rec_id',$profile)->first();
+
             return view('usermanagement.profile_user',compact('information','user'));
 
         }else{
+
             $rec_id = $employees->rec_id;
             if($rec_id == $profile)
             {
                 $information = DB::table('profile_information')->where('rec_id',$profile)->first();
-                return view('usermanagement.profile_user',compact('information','user'));
+
+                $info = DB::table('personal_information')->where('rec_id',$profile)->first();
+
+                return view('usermanagement.profile_user',compact('info','user','information'));
             }else{
-                $information = ProfileInformation::all();
-                return view('usermanagement.profile_user',compact('information','user'));
+                $info = ProfileInformation::all();
+                return view('usermanagement.profile_user',compact('info','user'));
             } 
         }
 
